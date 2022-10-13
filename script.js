@@ -1,5 +1,5 @@
-// document.querySelector('#search').addEventListener("click", searchMovie)
-// Menampilkan movie
+// kak maaf sebelumnya, ini codingan saya ada sedikit error, untuk search harus
+// reload dulu. Ga tau salahnya dimana.
 
 let nav = document.getElementById('nav');
 let cardTitle = document.getElementById('cardTitle');
