@@ -2,7 +2,7 @@
 // Menampilkan movie
 
 let nav = document.getElementById('nav');
-let cardTitle = document.getElementById('cardTitle')
+let cardTitle = document.getElementById('cardTitle');
 let card = document.getElementById('card');
 
 
@@ -27,10 +27,12 @@ let listMovie = async function movie() {
               <div class="d-flex mb-3" id="descMovie">
                 <div class="p-2 m-1"  id="cardTitle">
                   <p><b>${item.original_title}</b></p>
+                  <p>${item.release_date}</p>
                 </div>
                 <div class="ms-auto p-1 m-1"  id="cardRating">
                   <p>${item.vote_average}</p>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -39,14 +41,7 @@ let listMovie = async function movie() {
       
     })  
 }
-
 listMovie()
-
-
-
-
-
-
 
 // Search Movie
 
@@ -54,7 +49,7 @@ let search = document.getElementById('form')
 const inputMovie = document.getElementById('inputMovie').value;
 
 search.addEventListener("submit", (event)=>{
-  
+
   event.preventDefault();
     let searchMovie = async (inputUser) => {
       let response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=2742b2a761b82c4cb62be61847d5acb7&query=${inputUser}&page=1`)
@@ -73,33 +68,26 @@ search.addEventListener("submit", (event)=>{
               <div class="d-flex mb-3" id="descMovie">
                 <div class="p-2 m-1"  id="cardTitle">
                   <p><b>${item.original_title}</b></p>
+                  <p>${item.release_date}</p>
                 </div>
                 <div class="ms-auto p-1 m-1"  id="cardRating">
                   <p>${item.vote_average}</p>
                 </div>
+                  
               </div>
             </div>
           </div>
         </div>`
 
         card.innerHTML = print;
+        search.reset()
         
       });
   
   
     }
+    
+  
     searchMovie(inputMovie);
-    return;
-
+    
 })
-
-
-
-
-
-
-
-
-
-
-
