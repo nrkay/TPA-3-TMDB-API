@@ -10,7 +10,7 @@ let listMovie = async function movie() {
     let response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=2742b2a761b82c4cb62be61847d5acb7&sort_by=popularity.desc&page=1`)
     let result = await response.json()
     let movies = result.results
-
+    let variabelKosong = ''
     movies.forEach(item => {
        
         // let subCard = document.getElementById('subCard');
@@ -61,6 +61,7 @@ search.addEventListener("click", (event)=>{
       let result = await response.json()
       let movies = result.results;
       console.log(movies)
+      let kosong = ''
   
       movies.forEach(item => {
         card.innerHTML += `
